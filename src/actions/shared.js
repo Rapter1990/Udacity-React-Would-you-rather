@@ -17,13 +17,3 @@ export function handleInitialData() {
         });
     }
 }
-
-function getInitialData() {
-    return Promise.all([
-        getUsersInfo(),
-        getQuestionsInfo(),
-    ]).then(([users, questions]) => ({
-        users,
-        questions,
-    }))
-  }

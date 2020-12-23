@@ -4,7 +4,7 @@ import { showLoading, hideLoading } from 'react-redux-loading';
 
 
 /**
- * @description Fills all questions into store by getting a questions object fetched from API
+ * @description Fills all questions into store by getting questions object fetched from API
  * @param {object} questions
  */
 export function getQuestions(questions) {
@@ -78,15 +78,16 @@ export function handleCreateQuestion(optionOneText, optionTwoText) {
 
 /**
  * @description Answer a question on backend side by communicating with API and put into store 
- * @param {string} authedUser - Authed user ID
  * @param {string} qid  - Question ID
  * @param {string} answer - Answer of question ( optionOne , optionTwo)
  */
-export function handleAnswerQuestion(authedUser, qid, answer) {
+export function handleAnswerQuestion(qid, answer) {
 
-    return (dispatch) => {
+    return (dispatch, getState) => {
 
         dispatch(showLoading());
+
+        const { authedUser } = getState()
 
         return saveQuestionAnswer({
           authedUser,

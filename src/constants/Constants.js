@@ -10,3 +10,8 @@ export const LOGOUT_USER = 'LOGOUT_USER'
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
 export const ANSWER_QUESTION = "ANSWER_QUESTION";
 export const CREATE_QUESTION = "CREATE_QUESTION";
+
+/**
+ * @description Constants for User Actions
+ */ 
+export const RECEIVE_USERS = "RECEIVE_USERS";

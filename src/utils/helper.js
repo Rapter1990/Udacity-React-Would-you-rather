@@ -87,7 +87,7 @@ export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
 }
 
 
-function getInitialData() {
+export function getInitialData() {
     return Promise.all([
         _getUsers(),
         _getQuestions(),

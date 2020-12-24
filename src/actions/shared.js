@@ -1,4 +1,4 @@
-import { getInitialData } from "../utils/api";
+import { getInitialData } from "../utils/helper";
 import { receiveUsers } from "./users";
 import { recieveQuestions } from "./questions"
 import { setAuthedUser } from "./authedUser";

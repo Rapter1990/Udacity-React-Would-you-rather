@@ -28,14 +28,14 @@ function createQuestion(question) {
 /**
  * @description Answers question as a modified answer putting into the store
  * @param {string} authedUser - authedUser variable from question object
- * @param {string} questionid - questionid variable from question object
+ * @param {string} qid - questionid variable from question object
  * @param {string} answer - answer variable from question object
  */
-function answerQuestion ({ authedUser, questionid, answer }) {
+function answerQuestion ({ authedUser, qid, answer }) {
     return {
         type: ANSWER_QUESTION,
         authedUser,
-        questionid,
+        qid,
         answer
     }
 }

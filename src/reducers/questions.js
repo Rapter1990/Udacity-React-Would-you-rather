@@ -1,5 +1,10 @@
 import { RECEIVE_QUESTIONS ,ANSWER_QUESTION,CREATE_QUESTION } from "../constants/Constants";
 
+/**
+ * @description Handle questions process in terms of action type
+ * @param {object} state Defined State 
+ * @param {object} action Defined action type (RECEIVE_QUESTIONS , ANSWER_QUESTION and CREATE_QUESTION )
+ */
 export default function questions(state = null, action) {
     switch(action.type) {
         case RECEIVE_QUESTIONS:

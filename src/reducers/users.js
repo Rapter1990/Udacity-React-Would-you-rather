@@ -1,6 +1,11 @@
 import { RECEIVE_USERS } from "../constants/Constants";
 import { ANSWER_QUESTION, CREATE_QUESTION } from "../constants/Constants";
 
+/**
+ * @description Handle user process in terms of action type
+ * @param {object} state Defined State 
+ * @param {object} action Defined action type (RECEIVE_USERS , ANSWER_QUESTION and CREATE_QUESTION )
+ */
 export default function users(state = {}, action) {
     switch(action.type) {
         case RECEIVE_USERS:

@@ -3,6 +3,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 import wouldyourather from '../images/wouldyourather.png'
 import { logoutUser } from '../actions/authedUser';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class NavigationBar extends Component {
     render() {

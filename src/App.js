@@ -10,6 +10,7 @@ import AddQuestion from "./components/AddQuestion"
 import QuestionPage from "./components/QuestionPage"
 import ErrorPage from "./components/ErrorPage"
 import Login from "./components/Login"
+import { users } from './_DATA'
 
 class App extends Component {
 
@@ -25,7 +26,7 @@ class App extends Component {
         <Fragment>
           <LoadingBar />
           <div className="container">
-            <NavigationBar authedUser={this.props.authedUser}/>
+            {/*<NavigationBar authedUser={this.props.authedUser}/>*/}
             {this.props.authedUser ? (
               <Switch>
                 <Route exact path="/" component={Dashboard} />
@@ -41,7 +42,8 @@ class App extends Component {
                 <Route path="/not-found" component={ErrorPage} />
               </Switch>
             ) : (
-              <Route path="/login" component={Login} />
+              /*<Route path="/login" component={Login} />*/
+              <NavigationBar authedUser={users.sarahedo}/>
             )}
           </div>
         </Fragment>

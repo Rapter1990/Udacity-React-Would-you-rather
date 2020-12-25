@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import { handleInitialData } from "./actions/shared";
 import LoadingBar from "react-redux-loading";
-import Nav from "./components/Nav"
+import NavigationBar from "./components/NavigationBar"
 import Dashboard from "./components/Dashboard"
 import Leaderboard from "./components/Leaderboard"
 import AddQuestion from "./components/AddQuestion"
@@ -24,8 +24,8 @@ class App extends Component {
         <Router>
         <Fragment>
           <LoadingBar />
-          <Nav />
           <div className="container">
+            <NavigationBar authedUser={this.props.authedUser}/>
             {this.props.authedUser ? (
               <Switch>
                 <Route exact path="/" component={Dashboard} />
@@ -33,12 +33,15 @@ class App extends Component {
                 <Route path="/add" component={AddQuestion} />
                 <Route
                   path="/questions/:question_id"
+                  render={({ match }) => (
+                    <QuestionPage id={match.params.question_id} />
+                  )}
                   component={QuestionPage}
                 />
                 <Route path="/not-found" component={ErrorPage} />
               </Switch>
             ) : (
-              <Login />
+              <Route path="/login" component={Login} />
             )}
           </div>
         </Fragment>

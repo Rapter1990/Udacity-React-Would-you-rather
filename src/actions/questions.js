@@ -1,4 +1,4 @@
-import { saveQuestion, saveQuestionAnswer } from "../utils/_DATA";
+import { saveQuestion, saveQuestionAnswer } from "../utils/helper";
 import { RECEIVE_QUESTIONS ,ANSWER_QUESTION,CREATE_QUESTION } from "../constants/Constants";
 import { showLoading, hideLoading } from 'react-redux-loading';
 

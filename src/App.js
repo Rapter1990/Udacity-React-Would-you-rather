@@ -10,7 +10,7 @@ import AddQuestion from "./components/AddQuestion"
 import QuestionPage from "./components/QuestionPage"
 import ErrorPage from "./components/ErrorPage"
 import Login from "./components/Login"
-import { users } from './_DATA'
+import { getUsersInfo } from "./utils/helper"
 
 class App extends Component {
 
@@ -20,30 +20,36 @@ class App extends Component {
 
   render() {
 
+    const users  = getUsersInfo()
+
+    console.log(users);
+
     return (
       <div>
         <Router>
         <Fragment>
           <LoadingBar />
           <div className="container">
-            {/*<NavigationBar authedUser={this.props.authedUser}/>*/}
             {this.props.authedUser ? (
-              <Switch>
-                <Route exact path="/" component={Dashboard} />
-                <Route path="/leaderboard" component={Leaderboard} />
-                <Route path="/add" component={AddQuestion} />
-                <Route
-                  path="/questions/:question_id"
-                  render={({ match }) => (
-                    <QuestionPage id={match.params.question_id} />
-                  )}
-                  component={QuestionPage}
-                />
-                <Route path="/not-found" component={ErrorPage} />
-              </Switch>
+              <>
+                <NavigationBar authedUser={this.props.authedUser}/>
+                <Switch>
+                  <Route exact path="/" component={Dashboard} />
+                  <Route path="/leaderboard" component={Leaderboard} />
+                  <Route path="/add" component={AddQuestion} />
+                  <Route
+                    path="/questions/:question_id"
+                    render={({ match }) => (
+                      <QuestionPage id={match.params.question_id} />
+                    )}
+                    component={QuestionPage}
+                  />
+                  <Route path="/not-found" component={ErrorPage} />
+                </Switch>
+              </>
             ) : (
-              /*<Route path="/login" component={Login} />*/
-              <NavigationBar authedUser={users.sarahedo}/>
+              //<Route path="/login" component={Login} /> 
+              <NavigationBar authedUser={users}/>
             )}
           </div>
         </Fragment>

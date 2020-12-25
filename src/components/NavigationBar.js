@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Navbar, Nav} from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import wouldyourather from '../images/wouldyourather.png'
 import { logoutUser } from '../actions/authedUser';
 import { Link } from 'react-router-dom';
@@ -14,7 +14,7 @@ export default class NavigationBar extends Component {
         return (
             <>
                 <Navbar bg="dark" variant="dark">
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand href="/">
                     <img
                         alt="logo"
                         src={wouldyourather}

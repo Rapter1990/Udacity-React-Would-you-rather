@@ -7,7 +7,7 @@ import { showLoading, hideLoading } from 'react-redux-loading';
  * @description Fills all questions into store by getting questions object fetched from API
  * @param {object} questions
  */
-export function getQuestions(questions) {
+export function recieveQuestions(questions) {
     return {
       type: RECEIVE_QUESTIONS,
       questions,

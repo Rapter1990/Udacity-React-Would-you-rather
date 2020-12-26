@@ -10,7 +10,6 @@ import AddQuestion from "./components/AddQuestion"
 import QuestionPage from "./components/QuestionPage"
 import ErrorPage from "./components/ErrorPage"
 import Login from "./components/Login"
-import { getUsersInfo } from "./utils/helper"
 
 class App extends Component {
 
@@ -19,10 +18,6 @@ class App extends Component {
   }
 
   render() {
-
-    const users  = getUsersInfo()
-
-    console.log(users);
 
     return (
       <div>
@@ -48,8 +43,7 @@ class App extends Component {
                 </Switch>
               </>
             ) : (
-              //<Route path="/login" component={Login} /> 
-              <NavigationBar authedUser={users}/>
+              <Route path="/login" component={Login} /> 
             )}
           </div>
         </Fragment>

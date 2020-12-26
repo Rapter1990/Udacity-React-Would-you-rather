@@ -19,7 +19,7 @@ class App extends Component {
 
   render() {
 
-    const { authedUser, questionIds, users } = this.props;
+    const { authedUser, questions, users } = this.props;
 
     return (
       <div>
@@ -28,9 +28,9 @@ class App extends Component {
           <LoadingBar />
             {authedUser ? (
               <>
-                <NavigationBar authedUser={authedUser} questionIds={questionIds}/>
+                <NavigationBar authedUser={authedUser} />
                 <Switch>
-                  <Route exact path="/" component={Dashboard} />
+                  <Route exact path="/" component={() => <Dashboard authedUser={authedUser} questions={questions} />} />
                   <Route path="/leaderboard" component={Leaderboard} />
                   <Route path="/add" component={AddQuestion} />
                   <Route

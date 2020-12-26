@@ -32,7 +32,7 @@ export default class NavigationBar extends Component {
                         <Nav.Link as={Link} to="/add">New Question</Nav.Link>
                         <Nav.Link as={Link} to="/leaderboard">Leader Board</Nav.Link>
                             <Navbar.Text className="ml-md-4">
-                                <small>{`Hi ${authedUser.name}!`}</small>
+                                <small>{`Hi ${authedUser}!`}</small>
                                 {' | '}
                                 <a href="/login" onClick={() => logoutUser(authedUser)}>
                                     Logout

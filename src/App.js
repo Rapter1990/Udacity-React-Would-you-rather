@@ -19,15 +19,16 @@ class App extends Component {
 
   render() {
 
+    const { authedUser, questionIds, users } = this.props;
+
     return (
       <div>
         <Router>
         <Fragment>
           <LoadingBar />
-          <div className="container">
-            {this.props.authedUser ? (
+            {authedUser ? (
               <>
-                <NavigationBar authedUser={this.props.authedUser}/>
+                <NavigationBar authedUser={authedUser} questionIds={questionIds}/>
                 <Switch>
                   <Route exact path="/" component={Dashboard} />
                   <Route path="/leaderboard" component={Leaderboard} />
@@ -43,9 +44,8 @@ class App extends Component {
                 </Switch>
               </>
             ) : (
-              <Route component={Login} /> 
+              <Route component={() => <Login users={users} />}/> 
             )}
-          </div>
         </Fragment>
       </Router>
       </div>
@@ -55,7 +55,8 @@ class App extends Component {
 
 function mapStateToProps ({ authedUser }) {
   return {
-    loading: authedUser === null
+    loading: authedUser ? authedUser : null,
+    authedUser
   }
 }
 

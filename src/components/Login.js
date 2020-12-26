@@ -60,7 +60,7 @@ class Login extends Component {
                         >
                           <option defaulvalue="true">Select user</option>
                           {Object.keys(users).map((id) => (
-                            <option key={id} value={id}>
+                            <option key={id} value={users[id].name}>
                               {users[id].name}
                             </option>
                           ))}

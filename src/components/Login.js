@@ -1,19 +1,27 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { setAuthedUser } from "../actions/authedUser";
-import Dropdown from "react-bootstrap/Dropdown";
-import Button from "react-bootstrap/Button";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Col, Image, Form, Container, Row, Button } from 'react-bootstrap';
+import loginForm from '../images/loginform.png'
 
 class Login extends Component {
 
     state = {
-        authedUserId: "",
+        authedUser: "",
+    };
+
+    handleChange = (e) => {
+      const id = e.target.value;
+      this.setState(
+        {
+          authedUser: id
+        }
+      );
     };
     
     handleLogin = (e) => {
         e.preventDefault();
-        this.props.dispatch(setAuthedUser(this.state.authedUserId));
+        this.props.dispatch(setAuthedUser(this.state.authedUser));
     };
 
 
@@ -24,35 +32,56 @@ class Login extends Component {
         console.log(users);
 
         if (users) {
-            const userIds = Object.keys(users);
+
             return (
-            
-                <div>
-                <h3>Login</h3>
-                <Dropdown>
-                  <Dropdown.Toggle
-                  >
-                    {this.state.authedUserId}
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    {userIds.map((userId) => (
-                      <Dropdown.Item
-                        key={userId}
-                        onClick={() => this.setState({ authedUserId: userId })}
+
+              <>
+                <Container>
+                  <Row className="mt-4">
+                    <Col xs={12} className="text-center">
+                        <Image src={loginForm} alt="user avatar" fluid />
+                    </Col>
+
+                    <Col
+                      as={Form}
+                      xs={12}
+                      md={{ span: 6, offset: 3 }}
+                      className="text-center"
+                    >
+                      <Form.Group>
+                        <Form.Label as="h4" className="my-4">
+                          Sign In
+                        </Form.Label>
+
+                        <Form.Control
+                          as="select"
+                          name="users"
+                          onChange={this.handleChange}
+                        >
+                          <option defaulvalue="true">Select user</option>
+                          {Object.keys(users).map((id) => (
+                            <option key={id} value={id}>
+                              {users[id].name}
+                            </option>
+                          ))}
+                        </Form.Control>
+                      </Form.Group>
+
+                      <Button
+                        onClick={this.handleLogin}
+                        disabled={!this.state.authedUser}
+                        variant="primary"
                       >
-                        {userId}
-                      </Dropdown.Item>
-                    ))}
-                  </Dropdown.Menu>
-                </Dropdown>
-                <Button
-                  onClick={this.handleLogin}
-                  disabled={!this.state.authedUserId}
-                >
-                  Login
-                </Button>
-              </div>
-    
+                        Login
+                      </Button>
+
+                    </Col>
+
+                  </Row>
+                </Container>
+
+              </>
+              
             )
         }
     }

@@ -10,6 +10,8 @@ export default class NavigationBar extends Component {
 
         const { authedUser } = this.props;
 
+        console.log(authedUser);
+
         return (
             <>
                 <Navbar bg="dark" variant="dark">

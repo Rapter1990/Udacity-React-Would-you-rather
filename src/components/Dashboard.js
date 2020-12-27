@@ -5,13 +5,13 @@ import QuestionPage from '../components/QuestionPage';
 class Dashboard extends Component {
 
     state = {
-        value: "",
+        value: "unanswered",
     };
 
     filterAnswered = (arr) => {
         const answered = [];
     
-        arr.forEach((a) => (Object.keys(this.props.authedUser.answers).includes(a) ? answered.push(a) : ''));
+        arr.forEach((question) => (Object.keys(this.props.authedUser.answers).includes(question.id) ? answered.push(question) : ''));
         return answered;
     };
     
@@ -19,7 +19,7 @@ class Dashboard extends Component {
     filterUnanswered = (arr) => {
         const unanswered = [];
     
-        arr.forEach((a) => (Object.keys(this.props.authedUser.answers).includes(a) ? '' : unanswered.push(a)));
+        arr.forEach((question) => (Object.keys(this.props.authedUser.answers).includes(question.id) ? '' : unanswered.push(question)));
     
         return unanswered;
     };
@@ -58,8 +58,8 @@ class Dashboard extends Component {
 
                 <QuestionPage
                     questions={this.state.value === 'answered'
-                    ? this.filterAnswered(questions)
-                    : this.filterUnanswered(questions)}
+                    ? this.filterAnswered(Object.values(questions))
+                    : this.filterUnanswered(Object.values(questions))}
                 />
 
 

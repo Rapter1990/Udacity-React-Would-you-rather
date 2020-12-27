@@ -30,7 +30,7 @@ class App extends Component {
               <>
                 <NavigationBar authedUser={authedUser} />
                 <Switch>
-                  <Route exact path="/" component={() => <Dashboard authedUser={authedUser} questions={questions} />} />
+                  <Route exact path="/" component={() => <Dashboard authedUser={users[authedUser]} questions={questions} />} />
                   <Route path="/leaderboard" component={Leaderboard} />
                   <Route path="/add" component={AddQuestion} />
                   <Route
@@ -53,10 +53,12 @@ class App extends Component {
   }
 }
 
-function mapStateToProps ({ authedUser }) {
+function mapStateToProps ({ authedUser, users, questions }) {
   return {
     loading: authedUser ? authedUser : null,
-    authedUser
+    authedUser,
+    users,
+    questions
   }
 }
 

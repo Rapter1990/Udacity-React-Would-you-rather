@@ -15,7 +15,7 @@ export default class NavigationBar extends Component {
         return (
             <>
                 <Navbar bg="dark" variant="dark">
-                    <Navbar.Brand href="/">
+                    <Navbar.Brand as={Link} to="/">
                     <img
                         alt="logo"
                         src={wouldyourather}

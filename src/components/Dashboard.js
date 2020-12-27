@@ -13,7 +13,7 @@ class Dashboard extends Component {
     
         arr.forEach((a) => (Object.keys(this.props.authedUser.answers).includes(a) ? answered.push(a) : ''));
         return answered;
-      };
+    };
     
 
     filterUnanswered = (arr) => {
@@ -25,6 +25,8 @@ class Dashboard extends Component {
     };
 
     render() {
+
+        const { questions } = this.props;
 
         return (
             <Container>
@@ -56,8 +58,8 @@ class Dashboard extends Component {
 
                 <QuestionPage
                     questions={this.state.value === 'answered'
-                    ? this.filterAnswered(Object.keys(this.props.authedUser.answers))
-                    : this.filterUnanswered(Object.keys(this.props.authedUser.answers))}
+                    ? this.filterAnswered(questions)
+                    : this.filterUnanswered(questions)}
                 />
 
 

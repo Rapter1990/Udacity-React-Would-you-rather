@@ -4,8 +4,9 @@ import wouldyourather from '../images/wouldyourather.png'
 import { logoutUser } from '../actions/authedUser';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { connect } from "react-redux";
 
-export default class NavigationBar extends Component {
+class NavigationBar extends Component {
     render() {
 
         const { authedUser, authedUserName } = this.props;
@@ -43,3 +44,10 @@ export default class NavigationBar extends Component {
         )
     }
 }
+
+const mapStateToProps = ({ users, authedUser }) => ({
+    authedUser,
+    authedUserName: users[authedUser].name,
+});
+
+export default connect(mapStateToProps)(NavigationBar);

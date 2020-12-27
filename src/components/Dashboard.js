@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import QuestionPage from '../components/QuestionPage';
 
 class Dashboard extends Component {
 
@@ -10,21 +11,20 @@ class Dashboard extends Component {
     filterAnswered = (arr) => {
         const answered = [];
     
-        arr.forEach((a) => (Object.keys(this.props.questions.answers).includes(a) ? answered.push(a) : ''));
+        arr.forEach((a) => (Object.keys(this.props.authedUser.answers).includes(a) ? answered.push(a) : ''));
         return answered;
       };
     
 
-    filterUnaswered = (arr) => {
+    filterUnanswered = (arr) => {
         const unanswered = [];
     
-        arr.forEach((a) => (Object.keys(this.props.questions.answers).includes(a) ? '' : unanswered.push(a)));
+        arr.forEach((a) => (Object.keys(this.props.authedUser.answers).includes(a) ? '' : unanswered.push(a)));
     
         return unanswered;
     };
 
     render() {
-
 
         return (
             <Container>
@@ -53,6 +53,14 @@ class Dashboard extends Component {
                     </Button>
                     </Col>
                 </Row>
+
+                <QuestionPage
+                    questions={this.state.value === 'answered'
+                    ? this.filterAnswered(Object.keys(this.props.authedUser.answers))
+                    : this.filterUnanswered(Object.keys(this.props.authedUser.answers))}
+                />
+
+
             </Container>
         )
     }

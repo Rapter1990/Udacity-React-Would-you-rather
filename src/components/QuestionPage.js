@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
 
-export default class QuestionPage extends Component {
+class QuestionPage extends Component {
+    
     render() {
+
+        const { questions } = this.props;
+
+        console.log(questions);
+
         return (
             <div>
                 Question Page
@@ -9,3 +15,5 @@ export default class QuestionPage extends Component {
         )
     }
 }
+
+export default QuestionPage;

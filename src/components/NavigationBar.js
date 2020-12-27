@@ -8,9 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default class NavigationBar extends Component {
     render() {
 
-        const { authedUser } = this.props;
-
-        console.log(authedUser);
+        const { authedUser, authedUserName } = this.props;
 
         return (
             <>
@@ -32,7 +30,7 @@ export default class NavigationBar extends Component {
                         <Nav.Link as={Link} to="/add">New Question</Nav.Link>
                         <Nav.Link as={Link} to="/leaderboard">Leader Board</Nav.Link>
                             <Navbar.Text className="ml-md-4">
-                                <small>{`Hi ${authedUser}!`}</small>
+                                <small>{`Hi ${authedUserName}!`}</small>
                                 {' | '}
                                 <a href="/login" onClick={() => logoutUser(authedUser)}>
                                     Logout

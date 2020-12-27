@@ -87,10 +87,9 @@ class Login extends Component {
     }
 }
 
-function mapStateToProps({ users }) {
-    return {
-      users,
-    };
-}
+const mapDispatchToProps = ({ users, authedUser }) => ({
+  authedUser,
+  authedUserName: users[authedUser].name,
+});
   
-export default connect(mapStateToProps)(Login);
+export default connect(mapDispatchToProps)(Login);

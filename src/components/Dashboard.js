@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import QuestionList from './QuestionListjs';
+import QuestionList from './QuestionList';
 
 class Dashboard extends Component {
 

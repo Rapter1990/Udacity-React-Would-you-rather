@@ -22,8 +22,12 @@ class Login extends Component {
     
     handleLogin = (e) => {
         e.preventDefault();
-        this.props.dispatch(setAuthedUser(this.state.authedUser));
-        this.props.history.push("/");
+        if (this.state.authedUser) {
+          this.props.dispatch(setAuthedUser(this.state.authedUser));
+          this.props.history.push("/");
+        } else {
+          this.props.history.push("/not-found");
+        }        
     };
 
 

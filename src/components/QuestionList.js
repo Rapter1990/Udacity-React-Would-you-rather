@@ -1,32 +1,26 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import QuestionListItem from './QuestionListItem'
+import { Row } from 'react-bootstrap';
 
 class QuestionList extends Component {
     
     render() {
 
-        const { question, user } = this.props;
-        const { name, avatarURL } = user;
-        const { id } = question;
-
-        console.log("name :" , name , " | avatarURL : ", avatarURL + " | id : " , id);
-
+        const { questions } = this.props;
 
         return (
             <div>
-                Question Page
+                 <Row>
+                    {questions.map((id) => (
+                        <QuestionListItem key={id} id={id} />
+                    ))}
+                </Row>
             </div>
         )
     }
 }
 
-function mapStateToProps({ users, questions }, { id }) {
-    const { author } = questions[id];
+
   
-    return {
-      user: users[author],
-      question: questions[id],
-    };
-  }
-  
-export default connect(mapStateToProps)(QuestionList);
+export default withRouter(QuestionList);

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { setAuthedUser } from "../actions/authedUser";
 import { Col, Image, Form, Container, Row, Button } from 'react-bootstrap';
 import loginForm from '../images/loginform.png'
+import { useHistory } from 'react-router-dom';
 
 class Login extends Component {
 
@@ -22,6 +23,7 @@ class Login extends Component {
     handleLogin = (e) => {
         e.preventDefault();
         this.props.dispatch(setAuthedUser(this.state.authedUser));
+        this.props.history.push("/");
     };
 
 
@@ -58,7 +60,7 @@ class Login extends Component {
                           name="users"
                           onChange={this.handleChange}
                         >
-                          <option defaulvalue="true">Select user</option>
+                          <option value=''>Select user</option>
                           {Object.keys(users).map((id) => (
                             <option key={id} value={id}>
                               {users[id].name}

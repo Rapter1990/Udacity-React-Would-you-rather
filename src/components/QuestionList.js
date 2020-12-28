@@ -9,11 +9,13 @@ class QuestionList extends Component {
 
         const { questions } = this.props;
 
+        console.log(questions);
+
         return (
             <div>
                  <Row>
-                    {questions.map((id) => (
-                        <QuestionListItem key={id} id={id} />
+                    {questions.map((question) => (
+                        <QuestionListItem key={question.id} id={question.id} />
                     ))}
                 </Row>
             </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import QuestionPage from '../components/QuestionPage';
+import QuestionList from './QuestionListjs';
 
 class Dashboard extends Component {
 
@@ -56,7 +56,7 @@ class Dashboard extends Component {
                     </Col>
                 </Row>
 
-                <QuestionPage
+                <QuestionList
                     questions={this.state.value === 'answered'
                     ? this.filterAnswered(Object.values(questions))
                     : this.filterUnanswered(Object.values(questions))}

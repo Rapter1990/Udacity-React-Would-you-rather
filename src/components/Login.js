@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { setAuthedUser } from "../actions/authedUser";
 import { Col, Image, Form, Container, Row, Button } from 'react-bootstrap';
 import loginForm from '../images/loginform.png'
-import { useHistory } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 
 class Login extends Component {
 
@@ -95,4 +95,4 @@ function mapStateToProps({ users }) {
   };
 }
   
-export default connect(mapStateToProps)(Login);
+export default withRouter(connect(mapStateToProps)(Login));

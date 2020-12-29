@@ -38,7 +38,6 @@ class App extends Component {
                     render={({ match }) => (
                       <QuestionPage id={match.params.question_id} />
                     )}
-                    component={QuestionPage}
                   />
                   <Route path="/not-found" component={ErrorPage} />
                 </Switch>

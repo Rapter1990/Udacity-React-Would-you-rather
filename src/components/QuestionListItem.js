@@ -52,7 +52,7 @@ class QuestionListItem extends Component {
                     />
                     
                     <Card.Body>
-                        <Card.Title>{name}</Card.Title>
+                        <Card.Title>{name} Asks</Card.Title>
                         <Card.Text>
                         Would you rather
                         {' '}

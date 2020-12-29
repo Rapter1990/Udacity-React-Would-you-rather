@@ -24,6 +24,10 @@ class QuestionListItem extends Component {
           height : 200,
           alignSelf: 'center',
           marginTop : 30
+        },
+        card: {
+          width: '18rem',
+          marginBottom : 10  
         }
     }
 
@@ -37,7 +41,7 @@ class QuestionListItem extends Component {
 
         return (
             <Col xs="6" sm="4">
-                <Card style={{ width: '18rem' }}>
+                <Card style={this.styles.card}>
 
                     <Image
                         className="mb-4"

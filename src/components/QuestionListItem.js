@@ -1,19 +1,50 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import { Col, Card, Button, Image } from 'react-bootstrap';
 
 class QuestionListItem extends Component {
+
+
+    handleLogin = (e) => {
+        e.preventDefault();
+        this.props.history.push(`/questions/${this.id}`);          
+    };
+
+    showText = (str) => {
+        if (str.length > 12) {
+          return str.slice(0, 12);
+        }
+        return str;
+    };
+
     render() {
 
         const { question, user } = this.props;
         const { name, avatarURL } = user;
-        const { id } = question;
+        const { id, optionOne, optionTwo } = question;
 
         console.log("name :" , name , " | avatarURL : ", avatarURL + " | id : " , id);
 
         return (
-            <div>
-                
-            </div>
+            <Col xs="6" sm="4">
+                <Card style={{ width: '18rem' }}>
+                    <Image
+                        className="mb-4"
+                        src={avatarURL}
+                        alt={`image of ${name}`}
+                        roundedCircle                      
+                    />
+                    <Card.Body>
+                        <Card.Title>{name}</Card.Title>
+                        <Card.Text>
+                        Would you rather
+                        {' '}
+                        {this.showText(optionOne.text)}
+                        </Card.Text>
+                        <Button variant="primary" onClick={this.handleLogin}>View</Button>
+                    </Card.Body>
+                </Card>
+            </Col>
         )
     }
 }

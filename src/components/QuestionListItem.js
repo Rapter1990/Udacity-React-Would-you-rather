@@ -17,6 +17,15 @@ class QuestionListItem extends Component {
         return str;
     };
 
+    styles = {
+        cardImage: {
+          width : 200,
+          height : 200,
+          alignSelf: 'center',
+          marginTop : 30
+        }
+    }
+
     render() {
 
         const { question, user } = this.props;
@@ -28,12 +37,15 @@ class QuestionListItem extends Component {
         return (
             <Col xs="6" sm="4">
                 <Card style={{ width: '18rem' }}>
+
                     <Image
                         className="mb-4"
                         src={avatarURL}
                         alt={`image of ${name}`}
-                        roundedCircle                      
+                        roundedCircle
+                        style={this.styles.cardImage}                     
                     />
+                    
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
                         <Card.Text>

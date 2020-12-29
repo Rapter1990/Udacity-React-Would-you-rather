@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Col, Card, Button, Image } from 'react-bootstrap';
+import { withRouter, Link } from 'react-router-dom';
 
 class QuestionListItem extends Component {
 
 
     handleLogin = (e) => {
         e.preventDefault();
-        this.props.history.push(`/questions/${this.id}`);          
+        this.props.history.push(`/questions/${this.props.question.id}`);          
     };
 
     showText = (str) => {
@@ -70,4 +71,4 @@ function mapStateToProps({ users, questions }, { id }) {
     };
 }
 
-export default connect(mapStateToProps)(QuestionListItem);
+export default withRouter(connect(mapStateToProps)(QuestionListItem));

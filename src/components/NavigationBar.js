@@ -33,9 +33,12 @@ class NavigationBar extends Component {
                             <Navbar.Text className="ml-md-4">
                                 <small>{`Hi ${authedUserName}!`}</small>
                                 {' | '}
-                                <a href="/login" onClick={() => logoutUser(authedUser)}>
+                                <Link
+                                    to='/login'
+                                    onClick={() => this.props.dispatch(logoutUser(authedUser))}
+                                >
                                     Logout
-                                </a>
+                                </Link>
                             </Navbar.Text>
                         </Nav>
                     </Navbar.Collapse>    

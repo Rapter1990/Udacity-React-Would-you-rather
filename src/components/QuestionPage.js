@@ -27,12 +27,12 @@ import { handleAnswerQuestion } from '../actions/questions';
     handleAnsweredQuestion = (e) => {
         e.preventDefault();
 
-        this.props.question[this.state.selectedOption].votes.push(this.props.authedUser);
-
-        handleAnswerQuestion({
+        this.props.dispatch(
+            handleAnswerQuestion({
             qid: this.props.question.id,
             answer: this.state.selectedOption,
-        });
+          })
+        );
 
         this.setState(
             {

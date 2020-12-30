@@ -81,7 +81,7 @@ export function handleCreateQuestion(optionOneText, optionTwoText) {
  * @param {string} qid  - Question ID
  * @param {string} answer - Answer of question ( optionOne , optionTwo)
  */
-export function handleAnswerQuestion(qid, answer) {
+export function handleAnswerQuestion({qid, answer}) {
 
     return (dispatch, getState) => {
 

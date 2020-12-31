@@ -10,6 +10,7 @@ import AddQuestion from "./components/AddQuestion"
 import QuestionPage from "./components/QuestionPage"
 import ErrorPage from "./components/ErrorPage"
 import Login from "./components/Login"
+import QuestionResult from "./components/QuestionResult"
 
 class App extends Component {
 
@@ -37,6 +38,12 @@ class App extends Component {
                     path="/questions/:question_id"
                     render={({ match }) => (
                       <QuestionPage id={match.params.question_id} />
+                    )}
+                  />
+                  <Route
+                    path="/questions/:question_id/view"
+                    render={({ match }) => (
+                      <QuestionResult id={match.params.question_id} />
                     )}
                   />
                   <Route path="/not-found" component={ErrorPage} />

@@ -6,7 +6,7 @@ import { withRouter, Link } from 'react-router-dom';
 class QuestionListItem extends Component {
 
 
-    handleLogin = (e) => {
+    handleView = (e) => {
         e.preventDefault();
         this.props.history.push(`/questions/${this.props.question.id}`);          
     };
@@ -58,7 +58,7 @@ class QuestionListItem extends Component {
                         {' '}
                         {this.showText(optionOne.text)}
                         </Card.Text>
-                        <Button variant="primary" onClick={this.handleLogin}>View</Button>
+                        <Button variant="primary" onClick={this.handleView}>View</Button>
                     </Card.Body>
                 </Card>
             </Col>

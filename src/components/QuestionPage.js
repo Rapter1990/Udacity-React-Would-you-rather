@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Container, Row, Col, Card, Image, Button, Form } from 'react-bootstrap';
 import QuestionResult from './QuestionResult'
 import { handleAnswerQuestion } from '../actions/questions';
+import { withRouter } from 'react-router-dom';
 
  class QuestionPage extends Component {
 
@@ -39,6 +40,8 @@ import { handleAnswerQuestion } from '../actions/questions';
                 selectedOption: ''
             }
         );
+
+        this.props.history.push(`/questions/${this.props.question.id}/view`);    
     }
 
     render() {
@@ -134,4 +137,4 @@ function mapStateToProps({ authedUser, users, questions }, { id }) {
     };
   }
 
-  export default connect(mapStateToProps)(QuestionPage);
+export default withRouter(connect(mapStateToProps)(QuestionPage));

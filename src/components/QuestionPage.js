@@ -54,7 +54,7 @@ import { withRouter } from 'react-router-dom';
 
 
         if (optionOne.votes.includes(authedUser) || optionTwo.votes.includes(authedUser)) {
-            return <QuestionResult question={question} authedUser={authedUser} />;
+            return <QuestionResult question={question} authedUser={authedUser} id={this.props.question.id}/>;
         } else {
 
 

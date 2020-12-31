@@ -86,10 +86,11 @@ class QuestionResult extends Component {
                                     </Card.Text>
                                 </Col>
 
-
-                                <Button variant='primary' as={Link} to={`/`}>
-                                    Back to Home Page
-                                </Button>
+                                <Col className="mt-2 mb-2 text-center">
+                                    <Button variant='info' as={Link} to={`/`}>
+                                        Back to Home Page
+                                    </Button>
+                                </Col>
 
                             </Card>
                         </Col> 

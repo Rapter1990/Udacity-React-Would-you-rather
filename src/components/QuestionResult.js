@@ -49,51 +49,50 @@ class QuestionResult extends Component {
                             md={{ span: 10, offset: 1 }}
                             lg={{ span: 10, offset: 1 }}
                         >
-                        </Col>
-                        <Card>
-                            <Card.Header> Answer Result </Card.Header>
-                            <Image
-                                className="mb-4"
-                                src={avatarURL}
-                                alt={`image of ${name}`}
-                                roundedCircle
-                                style={this.styles.cardImage}                     
-                            />
-                            <Card.Text as="h3" className="mb-3" style={this.styles.cardText}>
-                                    Would you rather
-                            </Card.Text>
-
-                            <Col xs="auto" as={Card.Text}>
-                                {optionOneSelected && <Badge variant="danger">Your pick</Badge>}
-                            </Col>
-
-                            <Col xs={12}>
-                                <ProgressBar animated now={optionOnepercentage} variant="danger" />
-
-                                <Card.Text>
-                                {`${optionOneVotes} out of ${totalVotes} votes`}
+                            <Card>
+                                <Card.Header> Answer Result </Card.Header>
+                                <Image
+                                    className="mb-4"
+                                    src={avatarURL}
+                                    alt={`image of ${name}`}
+                                    roundedCircle
+                                    style={this.styles.cardImage}                     
+                                />
+                                <Card.Text as="h3" className="mb-3" style={this.styles.cardText}>
+                                        Would you rather
                                 </Card.Text>
-                            </Col>
 
-                            <Col xs="auto" as={Card.Text}>
-                                {optionTwoSelected && <Badge variant="warning">Your pick</Badge>}
-                            </Col>
+                                <Col xs="auto" as={Card.Text}>
+                                    {optionOneSelected && <Badge variant="danger">Your pick</Badge>}
+                                </Col>
 
-                            <Col xs={12}>
-                                <ProgressBar animated now={optionTwopercentage} variant="warning" />
+                                <Col xs={12}>
+                                    <ProgressBar animated now={optionOnepercentage} variant="danger" />
 
-                                <Card.Text>
-                                {`${optionTwoVotes} out of ${totalVotes} votes`}
-                                </Card.Text>
-                            </Col>
+                                    <Card.Text>
+                                    {`${optionOneVotes} out of ${totalVotes} votes`}
+                                    </Card.Text>
+                                </Col>
+
+                                <Col xs="auto" as={Card.Text}>
+                                    {optionTwoSelected && <Badge variant="warning">Your pick</Badge>}
+                                </Col>
+
+                                <Col xs={12}>
+                                    <ProgressBar animated now={optionTwopercentage} variant="warning" />
+
+                                    <Card.Text>
+                                    {`${optionTwoVotes} out of ${totalVotes} votes`}
+                                    </Card.Text>
+                                </Col>
 
 
-                            <Button variant='primary' as={Link} to={`/`}>
-                                Back to Home Page
-                            </Button>
+                                <Button variant='primary' as={Link} to={`/`}>
+                                    Back to Home Page
+                                </Button>
 
-                        </Card>
-                         
+                            </Card>
+                        </Col> 
                     </Row>
             </Container>            
         )

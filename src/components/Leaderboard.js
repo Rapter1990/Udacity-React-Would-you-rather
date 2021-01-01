@@ -8,10 +8,11 @@ class Leaderboard extends Component {
 
     styles = {
         cardText: {
-            alignSelf: 'center'
-        }
-    }
-
+          textAlign: 'center',
+          width: '100%',
+        },
+    };
+    
     render() {
 
         const { users } = this.props;

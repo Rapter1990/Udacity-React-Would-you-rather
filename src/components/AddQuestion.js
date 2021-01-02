@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Row ,Col, Button, Form } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
+import { handleCreateQuestion } from '../actions/questions';
 
 class AddQuestion extends Component {
 
@@ -32,10 +33,13 @@ class AddQuestion extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        this.props.handleCreateQuestion(
-            this.state.optionFirstQuestion,
-            this.state.optionSecondQuestion
-        )
+        this.props.dispatch(
+            handleCreateQuestion(
+                this.state.optionFirstQuestion,
+                this.state.optionSecondQuestion
+            )
+        );
+
 
         this.setState(
             {
@@ -53,7 +57,6 @@ class AddQuestion extends Component {
             <Container>
                 <Row className="mt-3">
                     <Col
-                      as={Form}
                       xs={12}
                       md={{ span: 8, offset: 2 }}
                       className="text-center"

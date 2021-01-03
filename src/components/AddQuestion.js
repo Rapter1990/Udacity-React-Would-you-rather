@@ -11,7 +11,7 @@ class AddQuestion extends Component {
         optionSecondQuestion: "",
     };
 
-    handleChange = (e) => {
+    handleFirstQuestion = (e) => {
         const optionFirst = e.target.value;
         this.setState(
           {
@@ -20,7 +20,7 @@ class AddQuestion extends Component {
         );
     };
 
-    handleChange = (e) => {
+    handleSecondQuestion = (e) => {
         const optionSecond = e.target.value;
         this.setState(
           {
@@ -74,6 +74,7 @@ class AddQuestion extends Component {
                                 type="text" 
                                 placeholder="Enter" 
                                 id="optionFirstQuestion"
+                                value={this.state.optionFirstQuestion}
                                 onChange={this.handleFirstQuestion}
                                 />
                                 <Form.Text className="text-muted">
@@ -87,6 +88,7 @@ class AddQuestion extends Component {
                                 type="text" 
                                 placeholder="Enter" 
                                 id="optionSecondQuestion"
+                                value={this.state.optionSecondQuestion}
                                 onChange={this.handleSecondQuestion}
                                 />
                                 <Form.Text className="text-muted">

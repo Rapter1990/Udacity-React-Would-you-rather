@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Row ,Col, Button, Form } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
 import { handleCreateQuestion } from '../actions/questions';
+import { connect } from 'react-redux';
 
 class AddQuestion extends Component {
 
@@ -49,7 +49,7 @@ class AddQuestion extends Component {
         );
 
         // return Home Page
-        useHistory.push('/');
+        this.props.history.push('/');
     }
 
     render() {
@@ -106,4 +106,4 @@ class AddQuestion extends Component {
     }
 }
 
-export default AddQuestion;
+export default withRouter(connect(null)(AddQuestion));

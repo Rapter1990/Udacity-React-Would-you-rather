@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Container, Row ,Col, Button, Form } from 'react-bootstrap';
 import { handleCreateQuestion } from '../actions/questions';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 class AddQuestion extends Component {
 

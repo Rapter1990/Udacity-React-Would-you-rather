@@ -18,10 +18,11 @@ export function recieveQuestions(questions) {
  * @description Creates question putting into the store
  * @param {object} question - Question object returning as a response from API
  */
-function createQuestion(question) {
+function createQuestion(question, authedUser) {
     return {
         type: CREATE_QUESTION,
-        question
+        question,
+        authedUser
     }
 }  
 
@@ -59,7 +60,7 @@ export function handleCreateQuestion(optionOneText, optionTwoText) {
             optionTwoText
         }
 
-        return saveQuestion(questionInfo)
+        return saveQuestion(questionInfo, authedUser)
             .then((question) => {
                     dispatch(createQuestion(question))
                 }

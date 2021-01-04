@@ -60,9 +60,9 @@ export function handleCreateQuestion(optionOneText, optionTwoText) {
             optionTwoText
         }
 
-        return saveQuestion(questionInfo, authedUser)
+        return saveQuestion(questionInfo)
             .then((question) => {
-                    dispatch(createQuestion(question))
+                    dispatch(createQuestion(question, authedUser))
                 }
             )
             .catch((error) => {

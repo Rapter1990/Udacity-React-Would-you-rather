@@ -101,7 +101,7 @@ This repository is the starter code for *all* Udacity students. Therefore, we mo
 
 
 ## Live Demo
-[Click Live Demo](https://xenodochial-hugle-83bc87.netlify.app) 
+[Click Live Demo](https://would-you-rather-udacity-project.netlify.app) 
 
 ## Screenshoots
 

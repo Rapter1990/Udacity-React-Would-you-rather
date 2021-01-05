@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Col, Card, Button, Image } from 'react-bootstrap';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class QuestionListItem extends Component {
 
@@ -35,7 +35,7 @@ class QuestionListItem extends Component {
 
         const { question, user } = this.props;
         const { name, avatarURL } = user;
-        const { id, optionOne, optionTwo } = question;
+        const { id, optionOne } = question;
 
         console.log("name :" , name , " | avatarURL : ", avatarURL + " | id : " , id);
 

@@ -120,7 +120,7 @@ This repository is the starter code for *all* Udacity students. Therefore, we mo
         <p>ScreenShoot 4 - Creating Question Page</p>
         <img src='screenshots/screenshot4.PNG'>
         <br>
-        <p>ScreenShoot 3 - Leaderboard Page</p>
+        <p>ScreenShoot 5 - Leaderboard Page</p>
         <img src='screenshots/screenshot5.PNG'>
     </div>
 </details>

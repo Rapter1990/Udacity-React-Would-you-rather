@@ -96,7 +96,10 @@ class AddQuestion extends Component {
                                     Write second option of question
                                 </Form.Text>
                             </Form.Group>
-                            <Button variant="primary" type="submit" block>
+                            <Button variant="primary" 
+                                    type="submit"
+                                    disabled={this.state.optionFirstQuestion === "" || this.state.optionSecondQuestion === ""} 
+                                    block>
                                 Submit
                             </Button>
                         </Form>

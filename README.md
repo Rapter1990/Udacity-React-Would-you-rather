@@ -102,3 +102,19 @@ This repository is the starter code for *all* Udacity students. Therefore, we mo
 
 ## Live Demo
 [Click Live Demo](https://xenodochial-hugle-83bc87.netlify.app) 
+
+## Screenshoots
+
+<details>
+<summary>Click here to show the screenshoots of project</summary>
+    <div>
+    <p>ScreenShoot 1 - </p>
+    <img src='screenshots/screenshot1.PNG'>
+    <br>
+    <p>ScreenShoot 2 - </p>
+    <img src='screenshots/screenshot2.PNG'>
+    <br>
+    <p>ScreenShoot 3 - </p>
+    <img src='screenshots/screenshot3.PNG'>
+    </div>
+</details>

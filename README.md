@@ -108,13 +108,17 @@ This repository is the starter code for *all* Udacity students. Therefore, we mo
 <details>
 <summary>Click here to show the screenshoots of project</summary>
     <div>
-    <p>ScreenShoot 1 - </p>
-    <img src='screenshots/screenshot1.PNG'>
-    <br>
-    <p>ScreenShoot 2 - </p>
-    <img src='screenshots/screenshot2.PNG'>
-    <br>
-    <p>ScreenShoot 3 - </p>
-    <img src='screenshots/screenshot3.PNG'>
+        <p>ScreenShoot 1 - Login Page</p>
+        <img src='screenshots/screenshot1.PNG'>
+        <br>
+        <p>ScreenShoot 2 - Dashboard Page with showing Unanswered Questions</p>
+        <img src='screenshots/screenshot2.PNG'>
+        <br>
+        <p>ScreenShoot 3 - Dashboard Page with showing Answered Questions</p>
+        <img src='screenshots/screenshot3.PNG'>
+        <p>ScreenShoot 4 - Creating Question Page</p>
+        <img src='screenshots/screenshot4.PNG'>
+        <p>ScreenShoot 3 - Leaderboard Page</p>
+        <img src='screenshots/screenshot5.PNG'>
     </div>
 </details>

@@ -107,7 +107,7 @@ import { withRouter } from 'react-router-dom';
                                     onClick={this.handleAnsweredQuestion}
                                     className="mb-3"
                                     variant="primary"
-                                    disabled={this.state.selectedOption === 'optionOne' || this.state.selectedOption === 'optionTwo'}
+                                    disabled={this.state.selectedOption !== 'optionOne' && this.state.selectedOption !== 'optionTwo'}
                                 >
                                     Submit
                                 </Button>
